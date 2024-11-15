@@ -76,8 +76,8 @@ def main():
     
     prompt= """Answer the question based on the provided ##Question## and image. ##Question##: {question}"""
 
-    ds_train = load_dataset("merve/vqav2-small",split="validation[:10%]")
-    ds_val = load_dataset("merve/vqav2-small",split="validation[90%:]")
+    ds_train = load_dataset("merve/vqav2-small",split="validation[:1%]")
+    ds_val = load_dataset("merve/vqav2-small",split="validation[99%:]")
     print("dataset", len(ds_train), len(ds_val))
     
     
@@ -141,7 +141,7 @@ def main():
     trainer = SFTTrainer(
         model=model,
         args=args,
-        train_dataset=dataset_train,
+        # train_dataset=dataset_train,
         eval_dataset= dataset_val,
         data_collator=collate_fn,
         dataset_text_field="", # needs dummy value
