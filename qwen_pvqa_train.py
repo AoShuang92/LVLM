@@ -120,7 +120,7 @@ def main():
         os.getenv("HF_HOME", os.path.join(os.getenv("XDG_CACHE_HOME", "~/.cache"), "huggingface"))
     )
     print(hf_home)
-    login(token="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")
+    login(token="")
 
     system_message = """You are a Vision Language Model specialized in interpreting visual data from medical images. 
                 Focus on delivering accurate, succinct, short answers based on the visual information. 
